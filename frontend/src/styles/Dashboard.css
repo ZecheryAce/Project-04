@@ -27,6 +27,7 @@
   font-size: 1.6rem;
   color: #a78bfa;
   margin: 0;
+  user-select: none;
 }
 
 .dashboard-header-right {
@@ -38,6 +39,7 @@
 .dashboard-welcome {
   color: #6b7280;
   font-size: 0.95rem;
+  user-select: none;
 }
 
 .dashboard-welcome span {
@@ -54,6 +56,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.2s;
+  user-select: none;
 }
 
 .dashboard-logout:hover {
@@ -91,6 +94,7 @@
   color: #4b5563;
   border-bottom: 1px solid #2a2a5a;
   margin: 0;
+  user-select: none;
 }
 
 .category-item {
