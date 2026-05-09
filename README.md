@@ -59,32 +59,38 @@ A full-stack planetary Q&A forum where users can register, log in, ask questions
 
 ## 📁 Project Structure
 PlanetsQA/
-├── backend/
+├── backend/                         # Node.js + Express backend
 │   ├── middleware/
-│   │   └── auth.js          # JWT authentication middleware
+│   │   └── auth.js                  # JWT authentication middleware
+│   │
 │   ├── routes/
-│   │   ├── auth.js          # Register and login routes
-│   │   ├── categories.js    # Fetch all categories
-│   │   ├── questions.js     # Get and post questions
-│   │   └── answers.js       # Get and post answers
-│   ├── db.js                # MySQL database connection
-│   ├── server.js            # Express server entry point
-│   └── package.json
-└── frontend/
-├── public/
-│   └── Small_Earth.png
-└── src/
-├── pages/
-│   ├── Login.jsx        # Login page
-│   ├── Register.jsx     # Registration page
-│   └── Dashboard.jsx    # Main dashboard
-├── styles/
-│   ├── Login.css
-│   ├── Register.css
-│   └── Dashboard.css
-├── api.js               # Axios API configuration
-├── App.jsx              # Routing
-└── index.css            # Global styles
+│   │   ├── auth.js                  # User registration & login routes
+│   │   ├── categories.js            # Category retrieval endpoints
+│   │   ├── questions.js             # Question CRUD operations
+│   │   └── answers.js               # Answer CRUD operations
+│   │
+│   ├── db.js                        # MySQL database connection setup
+│   ├── server.js                    # Express server entry point
+│   └── package.json                 # Backend dependencies & scripts
+│
+└── frontend/                        # React frontend
+    ├── public/
+    │   └── Small_Earth.png          # Static assets
+    │
+    └── src/
+        ├── pages/
+        │   ├── Login.jsx            # User login page
+        │   ├── Register.jsx         # User registration page
+        │   └── Dashboard.jsx        # Main application dashboard
+        │
+        ├── styles/
+        │   ├── Login.css            # Login page styles
+        │   ├── Register.css         # Registration page styles
+        │   └── Dashboard.css        # Dashboard styles
+        │
+        ├── api.js                   # Axios API configuration
+        ├── App.jsx                  # Application routing
+        └── index.css                # Global styles
 
 ---
 
