@@ -38,8 +38,8 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h1 className="login-title">🪐 PlanetsQA</h1>
-        <p className="login-subtitle">Your space for planetary questions</p>
+        <h1 className="login-title">🪐 Planets QA</h1>
+        <p className="login-subtitle">Your space for Planetary Questions!</p>
 
         {error && <p className="login-error">{error}</p>}
 
@@ -68,9 +68,9 @@ function Login() {
         </button>
 
         <p className="login-register-text">
-          Don't have an account?{" "}
+          Don't have an Account?{" "}
           <Link to="/register" className="login-link">
-            Register here
+            Register Here
           </Link>
         </p>
       </div>

@@ -66,7 +66,7 @@ function Register() {
   return (
     <div className="register-container">
       <div className="register-card">
-        <h1 className="register-title">🪐 PlanetsQA</h1>
+        <h1 className="register-title">🪐 Planets QA</h1>
         <h2 className="register-heading">Register User</h2>
 
         {errors.server && <p className="register-error">{errors.server}</p>}
@@ -155,9 +155,9 @@ function Register() {
         </button>
 
         <p className="register-login-text">
-          Already have an account?{" "}
+          Already have an Account?{" "}
           <Link to="/" className="register-link">
-            Login here
+            Login Here
           </Link>
         </p>
       </div>

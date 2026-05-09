@@ -164,7 +164,7 @@ function Dashboard() {
     <div className="dashboard-container">
       {/* ── Header ── */}
       <header className="dashboard-header">
-        <h1 className="dashboard-header-title">🪐 PlanetsQA</h1>
+        <h1 className="dashboard-header-title">🪐 Planets QA</h1>
         <div className="dashboard-header-right">
           <p className="dashboard-welcome">
             Welcome, <span>{username}</span>
@@ -249,7 +249,7 @@ function Dashboard() {
 
                 {questions.length === 0 ? (
                   <p className="no-questions">
-                    No questions yet in this category. Be the first to ask one!
+                    No questions yet in this category. Be the First to ask one!
                   </p>
                 ) : (
                   questions.map((q) => (
@@ -277,12 +277,26 @@ function Dashboard() {
               {/* Answers Section — only shows when a question is selected */}
               {selectedQuestion && (
                 <div className="answers-section">
+                  {/* Back Button */}
+                  <button
+                    className="back-button"
+                    onClick={() => {
+                      setSelectedQuestion(null);
+                      setAnswers([]);
+                      setAnswerBody("");
+                      setAnswerError("");
+                      setAnswerSuccess("");
+                    }}
+                  >
+                    ← Back to Questions
+                  </button>
+                  
                   <h3>Answers for: {selectedQuestion.title}</h3>
 
                   {/* Existing Answers */}
                   {answers.length === 0 ? (
                     <p className="no-answers">
-                      No answers yet. Be the first to answer!
+                      No answers yet. Be the First to answer!
                     </p>
                   ) : (
                     answers.map((a) => (

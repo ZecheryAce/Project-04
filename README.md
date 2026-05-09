@@ -1,4 +1,4 @@
-# 🪐 PlanetsQA
+# 🪐 Planets QA
 
 A full-stack planetary Q&A forum where users can register, log in, ask questions about planets, and submit answers. Built with Node.js, Express, MySQL, and React.
 
@@ -98,7 +98,7 @@ PlanetsQA/
 
 ## 🚀 Installation & Local Setup
 
-Follow these steps to run PlanetsQA on your own machine.
+Follow these steps to run Planets QA on your own machine.
 
 ### Prerequisites
 
@@ -197,7 +197,7 @@ npm install
 ```
 
 Open `src/api.js` and make sure the baseURL points to your local backend:
-    - Will need to change from my default link. 
+- Will need to change from my default link. 
 
 ```javascript
 baseURL: 'http://localhost:5000/api'

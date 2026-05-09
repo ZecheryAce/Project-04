@@ -366,3 +366,24 @@
   background-color: #4c1d95;
   cursor: not-allowed;
 }
+
+/* ─────────────────────────────────────
+   Back Button
+───────────────────────────────────── */
+
+.back-button {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid #2a2a5a;
+  color: #a78bfa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #1e1b4b;
+  border-color: #7c3aed;
+}
