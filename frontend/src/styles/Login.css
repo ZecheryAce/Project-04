@@ -1,0 +1,95 @@
+/* ─────────────────────────────────────
+   Login Page Styles
+───────────────────────────────────── */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a0a1a;
+}
+
+.login-card {
+  background-color: #12122a;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #2a2a5a;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #a78bfa;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.login-error {
+  color: #f87171;
+  background-color: #2a1a1a;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #2a2a5a;
+  background-color: #0a0a1a;
+  color: #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  border-color: #7c3aed;
+}
+
+.login-button {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #7c3aed;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #6d28d9;
+}
+
+.login-button:disabled {
+  background-color: #4c1d95;
+  cursor: not-allowed;
+}
+
+.login-register-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
