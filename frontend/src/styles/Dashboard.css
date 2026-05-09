@@ -357,6 +357,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
+  user-select: none;
 }
 
 .answer-form button:hover {
@@ -382,6 +383,7 @@
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.2s;
+  user-select: none;
 }
 
 .back-button:hover {
@@ -404,6 +406,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s;
+  user-select: none;
 }
 
 .ask-question-button:hover {
