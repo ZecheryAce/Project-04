@@ -393,7 +393,7 @@
 ───────────────────────────────────── */
 
 .ask-question-button {
-  align-self: flex-start;
+  align-self: flex-end;
   padding: 10px 20px;
   border-radius: 6px;
   border: 1px dashed #7c3aed;
