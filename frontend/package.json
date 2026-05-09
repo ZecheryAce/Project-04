@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/ZecheryAce/Project-Todo-App.git",
+  "homepage": "https://zecheryace.github.io/Project-04/",
   "type": "module",
   "scripts": {
     "dev": "vite",
