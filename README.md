@@ -11,26 +11,13 @@ A full-stack planetary Q&A forum where users can register, log in, ask questions
 
 ---
 
-## 📸 Screenshots
-
-### Login Page
-![Login Page](screenshots/login.png)
-
-### Register Page
-![Register Page](screenshots/register.png)
-
-### Dashboard
-![Dashboard](screenshots/dashboard.png)
-
----
-
 ## 🛠️ Tech Stack
 
 ### Frontend
 - React (Vite)
 - React Router DOM
 - Axios
-- CSS (custom space theme)
+- CSS
 
 ### Backend
 - Node.js
@@ -71,3 +58,106 @@ A full-stack planetary Q&A forum where users can register, log in, ask questions
 ---
 
 ## 📁 Project Structure
+PlanetsQA/
+├── backend/
+│   ├── middleware/
+│   │   └── auth.js          # JWT authentication middleware
+│   ├── routes/
+│   │   ├── auth.js          # Register and login routes
+│   │   ├── categories.js    # Fetch all categories
+│   │   ├── questions.js     # Get and post questions
+│   │   └── answers.js       # Get and post answers
+│   ├── db.js                # MySQL database connection
+│   ├── server.js            # Express server entry point
+│   └── package.json
+└── frontend/
+├── public/
+│   └── Small_Earth.png
+└── src/
+├── pages/
+│   ├── Login.jsx        # Login page
+│   ├── Register.jsx     # Registration page
+│   └── Dashboard.jsx    # Main dashboard
+├── styles/
+│   ├── Login.css
+│   ├── Register.css
+│   └── Dashboard.css
+├── api.js               # Axios API configuration
+├── App.jsx              # Routing
+└── index.css            # Global styles
+
+---
+
+## 🚀 Installation & Local Setup
+
+Follow these steps to run PlanetsQA on your own machine.
+
+### Prerequisites
+
+Make sure you have these installed:
+- [Node.js](https://nodejs.org) (v18 or higher)
+- [MySQL](https://dev.mysql.com/downloads/installer/)
+- [Git](https://git-scm.com)
+
+### 1 — Clone the Repository
+
+```bash
+git clone https://github.com/ZecheryAce/Projects-04.git
+cd PlanetsQA
+```
+
+### 2 — Set Up the Database
+
+1. Open MySQL Workbench and connect to your local instance
+2. Run the following SQL to create the database and tables:
+
+```sql
+CREATE DATABASE planetsqa;
+USE planetsqa;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE questions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  body TEXT NOT NULL,
+  user_id INT NOT NULL,
+  category_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE answers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  body TEXT NOT NULL,
+  user_id INT NOT NULL,
+  question_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+INSERT INTO categories (name) VALUES
+  ('Mercury'), ('Venus'), ('Earth'), ('Mars'),
+  ('Jupiter'), ('Saturn'), ('Uranus'), ('Neptune');
+```
+
+### 3 — Set Up the Backend
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside the `backend` folder:
