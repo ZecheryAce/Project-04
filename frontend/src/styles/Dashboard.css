@@ -27,7 +27,13 @@
   font-size: 1.6rem;
   color: #a78bfa;
   margin: 0;
+  cursor: pointer;
+  transition: color 0.2s;
   user-select: none;
+}
+
+.dashboard-header-title:hover {
+  color: #7c3aed;
 }
 
 .dashboard-header-right {

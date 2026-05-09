@@ -167,7 +167,22 @@ function Dashboard() {
     <div className="dashboard-container">
       {/* ── Header ── */}
       <header className="dashboard-header">
-        <h1 className="dashboard-header-title">🪐 Planets QA</h1>
+        <h1
+          className="dashboard-header-title"
+          onClick={() => {
+            setSelectedCategory(null);
+            setSelectedQuestion(null);
+            setQuestions([]);
+            setAnswers([]);
+            setShowQuestionForm(false);
+            setQuestionTitle("");
+            setQuestionBody("");
+            setQuestionError("");
+            setQuestionSuccess("");
+          }}
+        >
+          🪐 Planets QA
+        </h1>
         <div className="dashboard-header-right">
           <p className="dashboard-welcome">
             Welcome, <span>{username}</span>
