@@ -387,3 +387,51 @@
   background-color: #1e1b4b;
   border-color: #7c3aed;
 }
+
+/* ─────────────────────────────────────
+   Ask a Question Button
+───────────────────────────────────── */
+
+.ask-question-button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px dashed #7c3aed;
+  background-color: transparent;
+  color: #a78bfa;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.ask-question-button:hover {
+  background-color: #1e1b4b;
+  border-style: solid;
+}
+
+/* ─────────────────────────────────────
+   Question Form Buttons Row
+───────────────────────────────────── */
+
+.question-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #2a2a5a;
+  background-color: transparent;
+  color: #6b7280;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button:hover {
+  border-color: #f87171;
+  color: #f87171;
+}

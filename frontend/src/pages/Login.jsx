@@ -39,7 +39,7 @@ function Login() {
     <div className="login-container">
       <div className="login-card">
         <h1 className="login-title">🪐 Planets QA</h1>
-        <p className="login-subtitle">Your space for Planetary Questions!</p>
+        <p className="login-subtitle">Your Space for Planetary Questions!</p>
 
         {error && <p className="login-error">{error}</p>}
 

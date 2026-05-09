@@ -12,6 +12,8 @@ function Dashboard() {
   const [answers, setAnswers] = useState([]);
 
   // New question form
+  // Controls whether the question form is visible
+  const [showQuestionForm, setShowQuestionForm] = useState(false);
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionBody, setQuestionBody] = useState("");
   const [questionError, setQuestionError] = useState("");
@@ -103,6 +105,7 @@ function Dashboard() {
       });
 
       setQuestionSuccess("Question posted successfully!");
+      setShowQuestionForm(false);
       setQuestionTitle("");
       setQuestionBody("");
 
@@ -188,6 +191,7 @@ function Dashboard() {
                 setSelectedCategory(cat);
                 setQuestionError("");
                 setQuestionSuccess("");
+                setShowQuestionForm(false);
               }}
             >
               🪐 {cat.name}
@@ -207,41 +211,73 @@ function Dashboard() {
           {/* Category selected — show question form and questions */}
           {selectedCategory && (
             <>
-              {/* Post a Question Form */}
-              <div className="question-form">
-                <h3>Ask a Question in {selectedCategory.name}</h3>
-
-                <input
-                  type="text"
-                  placeholder="Question title..."
-                  value={questionTitle}
-                  onChange={(e) => {
-                    setQuestionTitle(e.target.value);
-                    setQuestionError("");
-                    setQuestionSuccess("");
-                  }}
-                />
-
-                <textarea
-                  placeholder="Describe your question in detail..."
-                  rows={3}
-                  value={questionBody}
-                  onChange={(e) => {
-                    setQuestionBody(e.target.value);
-                    setQuestionError("");
-                    setQuestionSuccess("");
-                  }}
-                />
-
-                {questionError && <p className="form-error">{questionError}</p>}
-                {questionSuccess && (
-                  <p className="form-success">{questionSuccess}</p>
-                )}
-
-                <button onClick={handlePostQuestion} disabled={questionLoading}>
-                  {questionLoading ? "Posting..." : "Post Question"}
+              {/* Ask a Question Button */}
+              {!showQuestionForm && (
+                <button
+                  className="ask-question-button"
+                  onClick={() => setShowQuestionForm(true)}
+                >
+                  + Ask a Question in {selectedCategory.name}
                 </button>
-              </div>
+              )}
+
+              {/* Post a Question Form — only shows when button is clicked */}
+              {showQuestionForm && (
+                <div className="question-form">
+                  <h3>Ask a Question in {selectedCategory.name}</h3>
+
+                  <input
+                    type="text"
+                    placeholder="Question title..."
+                    value={questionTitle}
+                    onChange={(e) => {
+                      setQuestionTitle(e.target.value);
+                      setQuestionError("");
+                      setQuestionSuccess("");
+                    }}
+                  />
+
+                  <textarea
+                    placeholder="Describe your question in detail..."
+                    rows={3}
+                    value={questionBody}
+                    onChange={(e) => {
+                      setQuestionBody(e.target.value);
+                      setQuestionError("");
+                      setQuestionSuccess("");
+                    }}
+                  />
+
+                  {questionError && (
+                    <p className="form-error">{questionError}</p>
+                  )}
+                  {questionSuccess && (
+                    <p className="form-success">{questionSuccess}</p>
+                  )}
+
+                  <div className="question-form-buttons">
+                    <button
+                      className="cancel-button"
+                      onClick={() => {
+                        setShowQuestionForm(false);
+                        setQuestionTitle("");
+                        setQuestionBody("");
+                        setQuestionError("");
+                        setQuestionSuccess("");
+                      }}
+                    >
+                      Cancel
+                    </button>
+
+                    <button
+                      onClick={handlePostQuestion}
+                      disabled={questionLoading}
+                    >
+                      {questionLoading ? "Posting..." : "Post Question"}
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Questions List */}
               <div className="questions-section">
@@ -290,7 +326,7 @@ function Dashboard() {
                   >
                     ← Back to Questions
                   </button>
-                  
+
                   <h3>Answers for: {selectedQuestion.title}</h3>
 
                   {/* Existing Answers */}
