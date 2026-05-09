@@ -58,6 +58,7 @@ A full-stack planetary Q&A forum where users can register, log in, ask questions
 ---
 
 ## 📁 Project Structure
+```bash
 PlanetsQA/
 ├── backend/                         # Node.js + Express backend
 │   ├── middleware/
@@ -91,6 +92,7 @@ PlanetsQA/
         ├── api.js                   # Axios API configuration
         ├── App.jsx                  # Application routing
         └── index.css                # Global styles
+```
 
 ---
 
