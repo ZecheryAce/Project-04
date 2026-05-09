@@ -169,3 +169,53 @@ npm install
 ```
 
 Create a `.env` file inside the `backend` folder:
+
+```bash
+DB_HOST=localhost
+DB_USER=planetsqa_user
+DB_PASSWORD=123456
+DB_NAME=planetsqa
+JWT_SECRET=planetsqa_super_secret_key_2024
+PORT=5000
+```
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+✅ Backend runs at `http://localhost:5000`
+
+### 4 — Set Up the Frontend
+
+Open a new terminal:
+
+```bash
+cd frontend
+npm install
+```
+
+Open `src/api.js` and make sure the baseURL points to your local backend:
+    - Will need to change from my default link. 
+
+```javascript
+baseURL: 'http://localhost:5000/api'
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
+
+✅ Frontend runs at `http://localhost:5173`
+
+---
+
+## 👤 Author
+
+**[Zechery Acevedo]**
+- GitHub: [@ZecheryAce](https://github.com/ZecheryAce)
+
+---
